@@ -1,0 +1,81 @@
+{
+  "target": "bmv2",
+  "p4info": "build/switch.p4.p4info.txt",
+  "bmv2_json": "build/switch.json",
+  "table_entries": [
+    {
+      "table": "IngressImpl.inc.port_tb",
+      "match": {
+        "standard_metadata.ingress_port": [1]
+      },
+      "action_name": "IngressImpl.inc.direct_forward",
+      "action_params": { }
+    },
+    {
+      "table": "IngressImpl.pr.protected_service_tb",
+      "match": {
+        "meta.pk_metadata.stage": [3],
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32],
+        "hdr.ipv4.protocol": [6],
+        "hdr.tcp.dstPort": [22]
+      },
+      "action_name": "IngressImpl.pr.allow_pkt",
+      "action_params": {  }
+    },
+    {
+      "table": "IngressImpl.fwd.fwd_tb",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32]
+      },
+      "action_name": "IngressImpl.fwd.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:02:22",
+        "port": 1
+      }
+    },
+    {
+      "table": "IngressImpl.fwd.fwd_tb",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.1.1", 32]
+      },
+      "action_name": "IngressImpl.fwd.ipv4_forward",
+      "action_params": {
+        "dstAddr": "00:00:00:01:01:00",
+        "port": 2
+      }
+    },
+    {
+      "table": "IngressImpl.pk.port_knocking_tb",
+      "match": {
+        "meta.pk_metadata.stage": [0],
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32],
+        "hdr.ipv4.protocol": [6],
+        "hdr.tcp.dstPort": [10000]
+      },
+      "action_name": "IngressImpl.pk.modify_stage",
+      "action_params": { }
+    },
+    {
+      "table": "IngressImpl.pk.port_knocking_tb",
+      "match": {
+        "meta.pk_metadata.stage": [1],
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32],
+        "hdr.ipv4.protocol": [6],
+        "hdr.tcp.dstPort": [20000]
+      },
+      "action_name": "IngressImpl.pk.modify_stage",
+      "action_params": { }
+    },
+    {
+      "table": "IngressImpl.pk.port_knocking_tb",
+      "match": {
+        "meta.pk_metadata.stage": [2],
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32],
+        "hdr.ipv4.protocol": [6],
+        "hdr.tcp.dstPort": [30000]
+      },
+      "action_name": "IngressImpl.pk.modify_stage",
+      "action_params": { }
+    }
+  ]
+}
