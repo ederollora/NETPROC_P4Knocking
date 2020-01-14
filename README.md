@@ -1,5 +1,7 @@
 # P4Knocking
 
+[![DOI](https://zenodo.org/badge/233599914.svg)](https://zenodo.org/badge/latestdoi/233599914)
+
 ## Prototype implementations for Port Knocking offloading
 
 In this repository you will find 4 implementation for P4Knocking, from full data plane to full control plane offloading. All the libraries and utilities have been taken from tutorials and are included in the utils directory. To enable Packet_in messages some code has been added to the libraries available from the P4 tutorials.  
