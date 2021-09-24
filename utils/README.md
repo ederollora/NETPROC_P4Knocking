@@ -1,5 +1,5 @@
-#NOTE
-##The parts I learnt about installing rules or some code reused was from [Kevin Cyu](https://github.com/kevinbird61) from repository [p4-researching](https://github.com/kevinbird61/p4-researching).
+# NOTE
+## The parts I learnt about installing rules or some code reused was from [Kevin Cyu](https://github.com/kevinbird61) from repository [p4-researching](https://github.com/kevinbird61/p4-researching).
 
 # Utiltiy of p4-reasearching project
 
