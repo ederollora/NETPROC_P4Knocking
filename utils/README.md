@@ -1,3 +1,6 @@
+#NOTE
+##The parts I learnt about installing rules or some code reused was from [Kevin Cyu](https://github.com/kevinbird61) from repository [p4-researching](https://github.com/kevinbird61/p4-researching).
+
 # Utiltiy of p4-reasearching project
 
 > Using the utility concept & some source code from [`p4lang/tutorials`](https://github.com/p4lang/tutorials). All right preserved by p4lang organization.
