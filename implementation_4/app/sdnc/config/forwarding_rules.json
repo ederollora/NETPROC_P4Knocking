@@ -1,0 +1,60 @@
+{
+  "switches" : {
+    "s1" : {
+      "rules": [
+        {
+          "ipDstAddr": "10.0.1.1"
+        },
+        {
+          "ipDstAddr": "10.0.2.2"
+        }
+      ],
+      "actions": [
+        {
+          "name" : "IngressImpl.forward.ipv4_forward",
+          "values" : {
+            "dstAddr" : "08:00:00:00:01:11",
+            "port" : 1
+          }
+        },
+        {
+          "name" : "IngressImpl.forward.ipv4_forward",
+          "values" : {
+            "dstAddr" : "00:00:00:02:02:00",
+            "port" : 2
+          }
+        }
+      ]
+    },
+    "s2" : {
+      "rules": [
+        {
+          "ipDstAddr": "10.0.2.2"
+        },
+        {
+          "ipDstAddr": "10.0.1.1"
+        }
+      ],
+      "actions": [
+        {
+          "name" : "IngressImpl.forward.ipv4_forward",
+          "values" : {
+            "dstAddr" : "08:00:00:00:02:22",
+            "port" : 1
+          }
+        },
+        {
+          "name" : "IngressImpl.forward.ipv4_forward",
+          "values" : {
+            "dstAddr" : "00:00:00:01:01:00",
+            "port" : 2
+          }
+        }
+      ]
+    },
+    "s3" : {
+      "rules": [ ] ,
+      "actions": [ ]
+    }
+  }
+}

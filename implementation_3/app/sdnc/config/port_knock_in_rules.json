@@ -1,0 +1,27 @@
+{
+  "switches" : {
+    "s1" : {
+      "rules": [ ],
+      "actions": [ ]
+    },
+    "s2" : {
+      "rules": [
+        {
+          "ipDstAddr" : "10.0.2.2",
+          "tcpDstPort" : 22,
+          "tcpCtrl" : 2
+        }
+      ],
+      "actions": [
+        {
+          "name" : "IngressImpl.pk_in.send_to_cpu",
+          "value": 0
+        }
+      ]
+    },
+    "s3" : {
+      "rules": [ ] ,
+      "actions": [ ]
+    }
+  }
+}

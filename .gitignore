@@ -11,7 +11,8 @@ venv/
 !*p4app.json
 !topology.json
 !*-runtime.json
-!config/*.json
+!implementation_3/app/sdnc/config/*.json
+!implementation_4/app/sdnc/config/*.json
 *.pcap
 
 # Extracted solutions

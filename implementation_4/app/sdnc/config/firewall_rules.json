@@ -1,0 +1,42 @@
+{
+  "switches" : {
+    "s1" : {
+      "rules": [ ] ,
+      "actions": [ ]
+    },
+    "s2" : {
+      "rules": [
+        {
+          "ipSrcAddr" : {
+            "address": "10.0.0.0",
+            "mask": 8
+          },
+          "ipDstAddr" : "10.0.2.2",
+          "tcpDstPort" : 80
+        },
+        {
+          "ipSrcAddr" : {
+            "address": "10.0.0.0",
+            "mask": 8
+          },
+          "ipDstAddr" : "10.0.2.2",
+          "tcpDstPort" : 8080
+        }
+      ],
+      "actions": [
+        {
+          "name" : "IngressImpl.firewall.allow_pkt",
+          "value": 0
+        },
+        {
+          "name" : "IngressImpl.firewall.allow_pkt",
+          "value": 0
+        }
+      ]
+    },
+    "s3" : {
+      "rules": [ ] ,
+      "actions": [ ]
+    }
+  }
+}
